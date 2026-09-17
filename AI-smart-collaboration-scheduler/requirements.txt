@@ -1,0 +1,9 @@
+openai
+python-dotenv
+pandas
+fuzzywuzzy
+python-Levenshtein
+python-dateutil
+langchain-core
+langchain-openai
+tzdata

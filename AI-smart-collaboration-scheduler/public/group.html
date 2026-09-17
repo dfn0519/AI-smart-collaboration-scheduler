@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>智慧排程聊天室系統</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="account-logged" id="account-logged">
+
+        <header class="top-window">
+            <div class="brand">
+                <div class="brand-mark" aria-hidden="true">
+                    <i class="fa-solid fa-calendar-check"></i>
+                </div>
+                <div>
+                    <span class="brand-kicker">AI Collaboration Scheduler</span>
+                    <h1>AI 智慧協作排程</h1>
+                </div>
+            </div>
+
+            <div class="top-actions">
+                <button class="menu-button" id="menu-button" type="button">
+                    <i class="fa-solid fa-sliders" aria-hidden="true"></i>
+                    <span>偏好設定</span>
+                </button>
+                <button class="logout-button" id="logout-button" type="button">
+                    <i class="fa-solid fa-arrow-right-from-bracket" aria-hidden="true"></i>
+                    <span>登出</span>
+                </button>
+            </div>
+        </header>
+
+        <div class="main-container">
+
+            <aside class="tab-container" id="tab-container">
+                <div class="sidebar-title">
+                    <div>
+                        <span class="sidebar-eyebrow">Workspace</span>
+                        <h2>協作空間</h2>
+                    </div>
+                    <span class="online-dot" title="連線中"></span>
+                </div>
+
+                <button class="tab-home active" id="home-button" type="button">
+                    <i class="fa-solid fa-house" aria-hidden="true"></i>
+                    <span>大廳</span>
+                </button>
+
+                <div class="group-section-label">
+                    <span>我的群組</span>
+                    <i class="fa-solid fa-comments" aria-hidden="true"></i>
+                </div>
+            </aside>
+
+            <main class="window-container">
+
+                <div class="home-window" id="home-window">
+                    <section class="welcome-block">
+                        <span class="welcome-badge">
+                            <i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i>
+                            AI 智慧協作
+                        </span>
+                        <h2>把討論變成清楚的行程</h2>
+                        <p>建立一個群組開始協作，或輸入群組 ID 加入夥伴。系統會從對話中整理時間與任務，協助你們更快完成排程。</p>
+                    </section>
+
+                    <section class="group-action-grid" aria-label="群組操作">
+                        <article class="group-action-card create-card">
+                            <div class="action-icon" aria-hidden="true">
+                                <i class="fa-solid fa-user-group"></i>
+                            </div>
+                            <div class="action-copy">
+                                <span class="card-index">01</span>
+                                <h3 class="text-style">建立新群組</h3>
+                                <p>替活動、報告或讀書計畫建立專屬討論空間。</p>
+                            </div>
+                            <div class="group-form-row">
+                                <label class="sr-only" for="create-group-name">群組名稱</label>
+                                <input type="text" class="group-form" placeholder="輸入群組名稱" id="create-group-name">
+                                <button class="group-form" id="create-group-button" type="button">
+                                    <span>建立群組</span>
+                                    <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                        </article>
+
+                        <article class="group-action-card join-card">
+                            <div class="action-icon" aria-hidden="true">
+                                <i class="fa-solid fa-link"></i>
+                            </div>
+                            <div class="action-copy">
+                                <span class="card-index">02</span>
+                                <h3 class="text-style">加入現有群組</h3>
+                                <p>向群組成員取得 ID，即可加入共同討論與排程。</p>
+                            </div>
+                            <div class="group-form-row">
+                                <label class="sr-only" for="add-group-id">群組 ID</label>
+                                <input type="text" class="group-form" placeholder="貼上群組 ID" id="add-group-id">
+                                <button class="group-form" id="add-group-button" type="button">
+                                    <span>加入群組</span>
+                                    <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                        </article>
+                    </section>
+
+                    <section class="feature-strip" aria-label="系統特色">
+                        <div>
+                            <i class="fa-solid fa-message" aria-hidden="true"></i>
+                            <span><strong>多人即時對話</strong>共同討論活動細節</span>
+                        </div>
+                        <div>
+                            <i class="fa-solid fa-brain" aria-hidden="true"></i>
+                            <span><strong>AI 資訊擷取</strong>辨識日期、時間與事件</span>
+                        </div>
+                        <div>
+                            <i class="fa-solid fa-list-check" aria-hidden="true"></i>
+                            <span><strong>任務集中管理</strong>將建議快速加入行事曆</span>
+                        </div>
+                    </section>
+                </div>
+
+                <div class="chat-container" id="chat-container">
+                    <div class="chat-header">
+                        <div class="chat-avatar" aria-hidden="true">
+                            <i class="fa-solid fa-users"></i>
+                        </div>
+                        <div>
+                            <strong>群組聊天室</strong>
+                            <span>即時協作與 AI 排程分析</span>
+                        </div>
+                        <span class="live-status"><span></span> 即時連線</span>
+                    </div>
+                    <div class="message-window" id="message-window"></div>
+                    <div class="message-input-area">
+                        <label class="sr-only" for="message-input">訊息內容</label>
+                        <input type="text" id="message-input" placeholder="輸入訊息或描述想安排的活動…">
+                        <button id="send-button" type="button" aria-label="發送訊息">
+                            <span>發送</span>
+                            <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                </div>
+            </main>
+
+            <aside class="taskAndCalendar-container">
+                <div class="calendar-container">
+                    <div class="panel-heading">
+                        <div>
+                            <span>Calendar</span>
+                            <h2>我的行事曆</h2>
+                        </div>
+                        <div class="panel-icon" aria-hidden="true"><i class="fa-regular fa-calendar"></i></div>
+                    </div>
+                    <div class="calendar-top">
+                        <button id="prev" class="calendar-button" type="button" aria-label="上個月"><i class="fa-solid fa-chevron-left"></i></button>
+                        <div id="month-year"></div>
+                        <button id="next" class="calendar-button" type="button" aria-label="下個月"><i class="fa-solid fa-chevron-right"></i></button>
+                    </div>
+                    <div class="calendar-middle">
+                        <div>日</div>
+                        <div>一</div>
+                        <div>二</div>
+                        <div>三</div>
+                        <div>四</div>
+                        <div>五</div>
+                        <div>六</div>
+                    </div>
+                    <div class="calendar-bottom" id="calendar-days"></div>
+                </div>
+                <div class="task-container">
+                    <div class="task-title">
+                        <div>
+                            <span>Today</span>
+                            <strong>當日任務</strong>
+                        </div>
+                        <i class="fa-solid fa-list-check" aria-hidden="true"></i>
+                    </div>
+                    <div id="task-list"></div>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <!-- 新增任務介面 -->
+    <div id="add-task-modal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-heading">
+                <span>New task</span>
+                <h3>新增任務</h3>
+            </div>
+            <label>任務類別(表單的分類或填寫其他)：</label><br>
+            <select id="add-title"></select><br>
+            <label>內容：</label><br>
+            <input type="text" id="add-content"><br>
+            <label>任務日期與開始時間：</label><br>
+            <input type="datetime-local" id="add-start-datetime"><br>
+            <label>持續時間（分鐘）：</label><br>
+            <input type="number" id="add-duration" min="5" step="5"><br>
+            <div class="modal-actions">
+                <button id="cancel-add-btn" class="QAButton" type="button">取消</button>
+                <button id="save-add-btn" class="QAButton-primary" type="button">新增任務</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="edit-task-modal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-heading">
+                <span>Edit task</span>
+                <h3>編輯任務</h3>
+            </div>
+            <label>任務類別：</label><br>
+            <select id="edit-title"></select><br>
+            <label>內容：</label><br>
+            <input type="text" id="edit-content"><br>
+            <label>任務日期與開始時間：</label><br>
+            <input type="datetime-local" id="edit-start-datetime"><br>
+            <label>持續時間（分鐘）：</label><br>
+            <input type="number" id="edit-duration" min="5" step="5"><br>
+            <div class="modal-actions">
+                <button id="cancel-edit-btn" class="QAButton" type="button">取消</button>
+                <button id="save-edit-btn" class="QAButton-primary" type="button">儲存變更</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 完成任務介面 -->
+    <div id="done-task-modal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-heading">
+                <span>Task review</span>
+                <h3>完成任務</h3>
+            </div>
+            <label>任務日期與開始時間：</label><br>
+            <input type="datetime-local" id="done-start-datetime"><br>
+            <label>持續時間（分鐘）：</label><br>
+            <input type="number" id="done-duration" min="5" step="5"><br>
+            <label>完成後的狀態：</label><br>
+            <select id="done-energy-level">
+                <option value="疲勞">疲勞</option>
+                <option value="普通">普通</option>
+                <option value="輕鬆">輕鬆</option>
+            </select><br>
+            <label>是否完成：</label><br>
+            <select id="done-completion-status">
+                <option value="完成">完成</option>
+                <option value="非準時完成">非準時完成</option>
+                <option value="未完成">未完成</option>
+            </select><br>
+            <div class="modal-actions">
+                <button id="cancel-done-btn" class="QAButton" type="button">取消</button>
+                <button id="save-done-btn" class="QAButton-primary" type="button">確認完成</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 使用者習慣表單 -->
+    <div id="user-preference-modal" class="user-preference-container hidden">
+        <form id="userPrefForm">
+            <!-- 問題一 -->
+            <div class="each-section">
+                <h2>一、可安排任務的時間區間(必填)</h2>
+                <div class="description-text">
+                    請排除固定行程（睡覺 / 上課 / 上班 / 通勤 / 例行活動），填入每天「有空閒」的時段。
+                    不知如何填寫可直接扣除睡覺時間即可。可為每一天新增多個時段，例如：12:00–16:00、19:00–22:00。
+                </div>
+
+                <div id="QA1-slots"></div>
+                <div class="QA-tip small">格式範例：禮拜一：12:00–17:00；19:00–22:00。</div>
+                <div id="QA1-slots-error" class="error" style="display:none;"></div>
+            </div>
+
+            <!-- 問題二 -->
+            <div class="each-section">
+                <h2>二、哪些時段你的專注力最佳？（必填，可複選）</h2>
+                <div class="QA2-slots" id="QA2-slots"></div>
+                <div id="QA2-slots-error" class="error" style="display:none;"></div>
+            </div>
+
+            <!-- 問題三 -->
+            <div class="each-section">
+                <h2>三、一次任務的理想持續時間（必填）</h2>
+                <div class="QA3-slots" id="QA3-slots"></div>
+                <div id="QA3-slots-error" class="error" style="display:none;"></div>
+            </div>
+
+            <!-- 問題四 -->
+            <div class="each-section">
+                <h2>四、您可能需要安排的任務類型（必填），以及該專注度需求</h2>
+                <div class="description-text">示例：讀書(中)、製作工作報告(高)、運動訓練(低)。</div>
+                <div class="QA4-slots" id="QA4-slots"></div>
+                <div class="section-footer">
+                    <button type="button" class="QAButton" id="addTaskBtn">＋ 新增任務</button>
+                </div>
+                <div id="QA4-slots-error" class="error" style="display:none;"></div>
+            </div>
+
+            <!-- 問題五 -->
+            <div class="each-section">
+                <h2>五、整天有空時的時間偏好（選填）</h2>
+                <div class="row-3">
+                    <div>
+                        <div class="section-title">早上（06:00–12:00）</div>
+                        <select id="prefMorning">
+                            <option value="">未選擇</option>
+                            <option>最高</option>
+                            <option>高</option>
+                            <option>中</option>
+                            <option>低</option>
+                        </select>
+                    </div>
+                    <div>
+                        <div class="section-title">下午（12:00–18:00）</div>
+                        <select id="prefAfternoon">
+                            <option value="">未選擇</option>
+                            <option>最高</option>
+                            <option>高</option>
+                            <option>中</option>
+                            <option>低</option>
+                        </select>
+                    </div>
+                    <div>
+                        <div class="section-title">晚上（18:00–24:00）</div>
+                        <select id="prefEvening">
+                            <option value="">未選擇</option>
+                            <option>最高</option>
+                            <option>高</option>
+                            <option>中</option>
+                            <option>低</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row" style="margin-top:10px;">
+                    <div>
+                        <div class="section-title">深夜（00:00–06:00）</div>
+                        <select id="prefLateNight">
+                            <option value="">未選擇</option>
+                            <option>最高</option>
+                            <option>高</option>
+                            <option>中</option>
+                            <option>低</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="QA-tip small">偏好程度: 最高 / 高 / 中 / 低，可重複使用。</div>
+            </div>
+
+            <div id="result" style="display:none; margin-top:15px;"></div>
+            <div class="footer">
+                <button type="button" class="QAButton" id="cancelBtn">取消</button>
+                <button type="submit" class="QAButton-primary">提交</button>
+            </div>
+
+        </form>
+
+    </div>
+
+    <script src="group.js" type="module"></script>
+    <script src="task.js" type="module"></script>
+    <script src="userPreferenceForm.js" type="module"></script>
+    <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+</body>
+
+</html>

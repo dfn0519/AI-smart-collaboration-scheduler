@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI 聊天室排程系統</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- 提示瀏覽器正確編碼 -->
+  <meta http-equiv="Content-Type" content="index/html; charset=utf-8" />
+</head>
+<body>
+  <!-- 帳號登入/創建介面 -->
+  <div class="account-Window" id="account-Window">
+    <div class="account-box">
+
+      <!-- 上方切換登入 / 創建帳號 -->
+      <div class="account-boxTop">
+        <button class="account-tab active" id="login-tab" type="button">登入帳號</button>
+        <button class="account-tab" id="create-tab" type="button">建立帳號</button>
+      </div>
+
+      <!-- 表單區域 -->
+      <form class="account-form" id="account-form" autocomplete="on">
+        <label class="text-style" for="username">帳號</label>
+        <input 
+          class="group-form" 
+          id="username" 
+          name="username"
+          placeholder="輸入帳號" 
+          type="text" 
+          autocomplete="username"
+          required
+        >
+
+        <label class="text-style" for="password">密碼</label>
+        <input 
+          class="group-form" 
+          id="password" 
+          name="password"
+          placeholder="輸入密碼" 
+          type="password" 
+          autocomplete="current-password"
+          required
+        >
+
+        <!-- 主按鈕 -->
+        <button class="loginBtn" id="submit-btn" type="button">登入帳號</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="account.js" type="module"></script>
+</body>
+</html>
