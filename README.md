@@ -18,39 +18,39 @@
 
 使用者可以建立新的討論空間，或輸入群組 ID 加入既有群組；右側同步顯示個人行事曆與當日任務。
 
-![群組大廳與行事曆](docs/images/01-dashboard.png)
+![群組大廳與行事曆](AI-smart-collaboration-scheduler/docs/images/01-dashboard.png)
 
 ### 多人即時群組聊天
 
 兩個使用者在同一個群組中傳送訊息時，訊息會即時同步到另一個畫面。
 
-![即時群組聊天](docs/images/02-realtime-group-chat.png)
+![即時群組聊天](AI-smart-collaboration-scheduler/docs/images/02-realtime-group-chat.png)
 
 ### 群組討論與 AI 助理分流
 
 一般群組保留討論脈絡；系統偵測到可能的排程需求後，使用者可在 AI 助理聊天室確認建議，不會直接干擾群組對話。
 
-![群組與 AI 助理聊天室](docs/images/03-group-and-assistant-chat.png)
+![群組與 AI 助理聊天室](AI-smart-collaboration-scheduler/docs/images/03-group-and-assistant-chat.png)
 
 ### AI 產生排程建議
 
 AI 助理會整理任務類型、日期、時間與持續時間，使用者確認後可一鍵新增到任務清單。
 
-![AI 排程建議](docs/images/04-ai-schedule-proposal.png)
+![AI 排程建議](AI-smart-collaboration-scheduler/docs/images/04-ai-schedule-proposal.png)
 
 ### 排程加入日曆與任務清單
 
 確認後，任務會顯示在日曆與當日任務區，後續仍能進行編輯、完成或刪除。
 
-![任務加入日曆](docs/images/05-task-added-to-calendar.png)
+![任務加入日曆](AI-smart-collaboration-scheduler/docs/images/05-task-added-to-calendar.png)
 
 ### 持續安排後續任務
 
 系統能在既有任務存在時繼續處理後續需求，避免新的建議與既有行程重疊。
 
 <p align="center">
-  <img src="docs/images/06-follow-up-scheduling.png" alt="後續排程建議" width="49%" />
-  <img src="docs/images/07-updated-calendar-task.png" alt="更新後的行事曆與任務清單" width="49%" />
+  <img src="AI-smart-collaboration-scheduler/docs/images/06-follow-up-scheduling.png" alt="後續排程建議" width="49%" />
+  <img src="AI-smart-collaboration-scheduler/docs/images/07-updated-calendar-task.png" alt="更新後的行事曆與任務清單" width="49%" />
 </p>
 
 ## 系統架構
@@ -99,8 +99,8 @@ flowchart TD
 
 為了適合公開放在 GitHub，以下版本已移除原始封面中包含的學號、Email 與老師簽名。
 
-- [專題競賽書面報告公開版](docs/project-documents/project-report-public.pdf)
-- [專題競賽簡報公開版](docs/project-documents/project-slides-public.pdf)
+- [專題競賽書面報告公開版](AI-smart-collaboration-scheduler/docs/project-documents/project-report-public.pdf)
+- [專題競賽簡報公開版](AI-smart-collaboration-scheduler/docs/project-documents/project-slides-public.pdf)
 
 原始書面報告說明系統結合 LLM、RAG、Node.js、MongoDB 與 Python，並將群組意圖偵測、四種處理模式與多因子排程演算法作為核心設計；簡報則以系統架構、四種模式、群組兩階段判斷與實機展示整理整體成果。
 
