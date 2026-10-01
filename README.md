@@ -67,10 +67,12 @@ flowchart TD
     G <--> I[OpenAI API 與 RAG 記憶]
     G --> J[行事曆與任務清單]
 ```
-![系統架構](AI-smart-collaboration-scheduler/docs/images/09-all_system.png)
-## AI 決策層架構
+![系統架構](AI-smart-collaboration-scheduler/docs/images/09 - all_system.png)
 系統以前端聊天室與行事曆提供互動，Node.js 後端負責帳號、群組、任務與 Socket.IO 即時通訊；Python 模組則處理意圖分類、時間轉換、排程運算與 RAG 檢索。
-
+## AI 決策層架構
+![AI 決策層架構](AI-smart-collaboration-scheduler/docs/images/09 - ai_system.png)
+## 演算法推薦系統流程
+![演算法推薦系統流程](AI-smart-collaboration-scheduler/docs/images/09 - algorithm_system.png)
 ## AI 判斷與排程方式
 
 | 情境 | 處理方式 |
