@@ -72,7 +72,7 @@ flowchart TD
 系統以前端聊天室與行事曆提供互動，Node.js 後端負責帳號、群組、任務與 Socket.IO 即時通訊；Python 模組則處理意圖分類、時間轉換、排程運算與 RAG 檢索。
 ## AI 決策層架構
 
-![AI 決策層架構](AI-smart-collaboration-scheduler/docs/images/08-ai_system.png)
+![AI 決策層架構]([AI-smart-collaboration-scheduler/docs/images/08-ai_system.png)
 
 ## 演算法推薦系統流程
 
